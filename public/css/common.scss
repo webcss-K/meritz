@@ -1,0 +1,199 @@
+@charset "utf-8";
+@import "fonts.scss";
+@import "variable.scss";
+
+/* reset */
+* { margin: 0; padding: 0; border: 0; font: inherit; color: inherit; }
+*, :after, :before { box-sizing: border-box; flex-shrink: 0; }
+:root { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; cursor: default; line-height: 1.5; overflow-wrap: break-word; word-break: break-word; tab-size: 4; }
+html, body { height: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+button { background: none; border: 0; cursor: pointer; }
+a { text-decoration: none; }
+b, strong { font-weight: bold; }
+table { border-collapse: collapse; border-spacing: 0; }
+input, textarea, select { font: inherit; }
+button, input[type="button"], input[type="submit"], input[type="reset"] { cursor: pointer; }
+input[type="text"], input[type="password"], textarea { -webkit-appearance: none; }
+
+body {
+  font-family: $BasicFontFamily;
+    font-weight: $BasicFontWeight;
+    font-size: $BasicFontSize;
+    line-height: $BasicLineHeight;
+    font-style: normal;
+    letter-spacing: $BasicLetterSpacing;
+    color: $BasicColor;
+}
+
+/* hamburger */
+.hamburger-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #222;
+    top: 50%;
+    left: 0;
+    transition: transform 0.3s ease;
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      top: -6px;
+      transition: transform 0.3s ease;
+      background-color: #222;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      bottom: -6px;
+      transition: transform 0.3s ease;
+      background-color: #222;
+    }
+  }
+}
+
+.open .hamburger-icon {
+  z-index: 10;
+
+  span {
+    transform: rotate(45deg);
+
+    &::before{
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    &::after{
+      bottom: 0;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+/* nav */
+.nav {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 60px 30px;
+  background-color: #fff;
+  z-index: 5;
+}
+
+.open + .nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* button */
+.button {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 17px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: #242628;
+}
+
+.btn-ask {
+  position: fixed;
+  display: block;
+  transition: all 1s;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+
+  .button {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 720px;
+    background: #FF6600;
+  }
+}
+
+
+
+
+
+
+/* Modal 공통 영역 */
+.common-modal-wrap.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+.common-modal-wrap .modal {
+  max-width: 90%;
+}
+.common-modal-wrap .modal .close-btn{
+  cursor: pointer;
+  width: 36px;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+.common-modal-wrap .modal img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* Swiper styles */
+.common-modal-wrap .modal .swiper {
+  width: 100%;
+  height: 100%;
+  max-width: 468px;
+}
+
+.common-modal-wrap .modal .swiper .swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/*스와이프 페이지네이션 도트 색상 변경 */
+.common-modal-wrap .modal .swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #EE3823; /* 활성화된 도트 색상 */
+}
