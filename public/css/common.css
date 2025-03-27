@@ -120,11 +120,19 @@ input[type=text], input[type=password], textarea {
 body {
   font-family: "LIFEPLUS", "맑은 고딕", "Malgun Gothic", "Dotum", "돋움", "gulim", "굴림", Helvetica, sans-serif;
   font-weight: 300;
-  font-size: 10px;
+  font-size: 17px;
   line-height: 1.5;
   font-style: normal;
   letter-spacing: -0.04em;
-  color: #000;
+  color: #1b1b1b;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /* hamburger */
@@ -230,53 +238,357 @@ body {
   background: #FF6600;
 }
 
-/* Modal 공통 영역 */
-.common-modal-wrap.modal-overlay {
+/* bottom sheet module */
+.bottom-sheet {
   display: none;
   position: fixed;
-  top: 0;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 6;
+  z-index: 10;
 }
-
-.common-modal-wrap .modal {
-  max-width: 90%;
-}
-
-.common-modal-wrap .modal .close-btn {
-  cursor: pointer;
-  width: 36px;
-  margin-left: auto;
-  margin-bottom: 10px;
-}
-
-.common-modal-wrap .modal img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* Swiper styles */
-.common-modal-wrap .modal .swiper {
-  width: 100%;
-  height: 100%;
-  max-width: 468px;
-}
-
-.common-modal-wrap .modal .swiper .swiper-slide {
-  text-align: center;
-  /* Center slide text vertically */
+.bottom-sheet .sheet-wrap {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden auto;
+}
+.bottom-sheet .sheet-wrap .content-title {
+  padding-bottom: 15px;
+  text-align: left;
+  border-bottom: 3px solid #ff8000;
+}
+.bottom-sheet .sheet-wrap .content-title p {
+  font-size: 22px;
+}
+.bottom-sheet .sheet-wrap .content-title h4 {
+  font-size: 38px;
+  color: #fc6a09;
+}
+.bottom-sheet .sheet-wrap .sheet-contents {
+  flex: 1;
+  padding: 2rem 2rem;
+}
+.bottom-sheet .sheet-wrap .close-button {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  width: 36px;
+  height: 36px;
+  z-index: 2;
+}
+.bottom-sheet .sheet-wrap.animate-up {
+  animation: slide-up 0.3s ease-out;
+  text-align: center;
+}
+.bottom-sheet::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.bottom-sheet.open {
+  display: block;
 }
 
-/*스와이프 페이지네이션 도트 색상 변경 */
-.common-modal-wrap .modal .swiper .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #EE3823; /* 활성화된 도트 색상 */
+/* formbox */
+#inquiry {
+  margin-top: 25px;
+}
+#inquiry .impColor {
+  font-size: 15px;
+  color: #ff6600;
+  text-align: right;
+  font-weight: 400;
+}
+#inquiry .form_box {
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding-bottom: 60px;
+  gap: 20px;
+  flex-direction: column;
+}
+#inquiry .form_box .input_item {
+  display: flex;
+  align-items: center;
+}
+#inquiry .form_box .input_item p {
+  width: 200px;
+  font-size: 17px;
+  text-align: left;
+}
+#inquiry .form_box .input_item p.reqiured:after {
+  display: inline-block;
+  content: "*";
+  padding-left: 3px;
+  clear: both;
+  font-size: 20px;
+  font-weight: bold;
+}
+#inquiry .form_box .select_box {
+  position: relative;
+  grid-column-gap: 8px;
+}
+#inquiry .form_box .select_box li {
+  position: relative;
+  flex: 1;
+}
+#inquiry .form_box .select_box label {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: calc(50% - 3px);
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 7px solid #D9D9D9;
+}
+#inquiry .form_box .select_box select {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 16px;
+  color: #333;
+  font-size: 16px;
+  background: #F8F9FD;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+#inquiry .form_box .select_box select:focus {
+  box-shadow: 4px 4px 8px rgba(232, 39, 44, 0.14);
+  border: 1px solid #E8272C;
+}
+#inquiry .form_box .select_box select:focus option {
+  background: #fff;
+}
+#inquiry .form_box .select_box select:focus option[value=""][disabled] {
+  display: none;
+}
+#inquiry .form_box .select_box select:invalid {
+  color: #999;
+}
+#inquiry .form_box .select_box.group {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+#inquiry .form_box input[type=text] {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 16px;
+  color: #333;
+  font-size: 16px;
+  border-radius: 8px;
+  letter-spacing: -0.03em;
+  outline: none;
+  background: #F8F9FD;
+}
+#inquiry .form_box input[type=text]:focus {
+  box-shadow: 4px 4px 8px rgba(232, 39, 44, 0.14);
+  border: 1px solid #E8272C;
+}
+#inquiry .form_box input[type=tel] {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 16px;
+  color: #333;
+  font-size: 16px;
+  border-radius: 8px;
+  letter-spacing: -0.03em;
+  outline: none;
+  background: #F8F9FD;
+}
+#inquiry .form_box input[type=tel]:focus {
+  box-shadow: 4px 4px 8px rgba(232, 39, 44, 0.14);
+  border: 1px solid #E8272C;
+}
+#inquiry .form_box b {
+  display: flex;
+  align-items: center;
+  grid-column-gap: 8px;
+}
+#inquiry .form_box small {
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+/* checkbox */
+.privacy-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 28px;
+  border-top: 1px solid #eee;
+}
+.privacy-box .checkbox-agree {
+  padding: 14px 0;
+  border-bottom: 1px solid #F0F1F6;
+}
+.privacy-box div[class^=checkbox-] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 14px auto 0;
+}
+.privacy-box div[class^=checkbox-] input[type=checkbox] + label {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  color: #777;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.privacy-box div[class^=checkbox-] input[type=checkbox] + label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background: url(../images/common/check.svg) no-repeat center/100% auto;
+}
+.privacy-box div[class^=checkbox-] input[type=checkbox]:checked + label {
+  color: #222;
+  font-weight: 700;
+}
+.privacy-box div[class^=checkbox-] input[type=checkbox]:checked + label:before {
+  background-image: url(../images/common/checked.svg);
+}
+.privacy-box input[type=checkbox] + label {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  color: #777;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.privacy-box input[type=checkbox]:checked + label {
+  color: #222;
+  font-weight: 700;
+}
+.privacy-box .btn_privacy {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/common/arr_right.svg) no-repeat 0 0/100% auto;
+  text-indent: -999em;
+}
+
+/* animation */
+@keyframes pulse {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide-up2 {
+  0% {
+    transform: translateY(100%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes height {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes line-step {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+/* PC */
+@media screen and (min-width: 768px) {
+  img.profile {
+    width: 80px;
+  }
+  .desc {
+    font-size: 22px;
+  }
+  .button {
+    font-size: 20px;
+  }
+  .web-view {
+    display: none;
+  }
+  .mob-view {
+    display: block;
+  }
+  /* ====== header ====== */
+  .hamburger-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .hamburger-icon span::before {
+    top: -10px;
+  }
+  .hamburger-icon span::after {
+    bottom: -10px;
+  }
+  /* bottom sheet module */
+  .bottom-sheet .sheet-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=common.css.map */

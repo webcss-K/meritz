@@ -17,55 +17,44 @@
 	<link rel="stylesheet" href="../css/lib/aos.css">
 	<link rel="stylesheet" href="../css/lib/swiper-bundle.min.css">
 	<link rel="stylesheet" href="../css/common.css">
-	<link rel="stylesheet" href="../css/B_Type.css">
+	<link rel="stylesheet" href="../css/A_Type.css">
 </head>
 
 <body>
-<div class="wrapper">
-	<header class="header">
-		<div class="inner">
-			<div class="logo">logo</div>
-			<button class="menu-toggle" aria-label="메뉴">
-				<span class="screen-only">메뉴</span>
-				<div class="hamburger-icon">
-					<span></span>
-				</div>
-			</button>
-			<nav class="nav">
-				<ul>
-					<li><a href="#">link 1</a></li>
-					<li><a href="#">link 2</a></li>
-					<li><a href="#">link 3</a></li>
-					<li><a href="#">link 4</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+  <button class="menu-toggle" aria-label="메뉴">
+    <div class="hamburger-icon">
+      <span></span>
+    </div>
+  </button>
 
-	<main>
-		
+  <nav class="nav">
+    <ul>
+      <li><a href="#">link 1</a></li>
+      <li><a href="#">link 2</a></li>
+      <li><a href="#">link 3</a></li>
+      <li><a href="#">link 4</a></li>
+    </ul>
+  </nav>
 
-		<!-- [D] 상담 먼저 받아보기 버튼 -->
-		<div class="fixed-btn_02">
+		<!-- [S] 신청하기 버튼 -->
+		<div class="btn-ask">
 			<div class="inner">
-				<button onclick="openBottomSheet('sheet-counsel')" class="button btn-click" data-title="상담 먼저 받아보기">상담 먼저 받아보기 <i>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,255,255,1)"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg>
-				</i></button>
+				<button onclick="openBottomSheet('sheet-counsel')" class="button btn-click">신청하기</button>
 			</div>
 		</div>
 
-		<!-- [D] 상담 먼저 받아보기 -->
+		<!-- [D] 신청하기 -->
 		<div id="sheet-counsel" class="bottom-sheet sheet-counsel">
 			<div class="sheet-wrap">
 				<div class="sheet-header">
-					<h3>파트너스 상담 신청하기</h3>
+					<h3>타이틀</h3>
 					<button onclick="closeAll(); init_value();" class="close-button btn-click" data-title="상담신청 닫기">
-						<span class="screen-only">닫기</span>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24" height="24" fill="none">
 							<path fill="#222" d="M21.172 24 5.586 8.414l2.828-2.828L24 21.17 39.586 5.586l2.828 2.828L26.83 24l15.585 15.586-2.828 2.828L24 26.828 8.414 42.414l-2.828-2.828L21.172 24Z"/>
 						</svg>
 					</button>
 				</div>
+
 				<div class="sheet-contents">
 					<div class="content-title">
 						<p class="desc">빠른 상담을 위해</p>
@@ -86,6 +75,106 @@
 											<input type="tel" class="onlynumber" id="user_call" name="user_call" placeholder="-를 제외한 번호만 입력해주세요" maxlength="11" autocomplete="off" v-model="ctp" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 										</div>
 									</div>
+
+									<div class="input_item">
+										<p class="reqiured">지역<span class="blind">필수 선택</span></p>
+										<ul class="select_box group">
+											<li class="select_item">
+												<label></label>
+												<select name="user_sido" id="user_sido" required>
+													<option value="" disabled selected>시/도</option>
+													<option value="서울특별시">서울특별시</option>
+													<option value="대구광역시">대구광역시</option>
+												</select>
+
+											</li>
+											<li class="select_item">
+												<label></label>
+												<select name="user_gugun" id="user_gugun" required>
+													<option value="" disabled selected>시/군/구</option>
+													<option value="강남구">강남구</option>
+												</select>
+											</li>
+										</ul>
+									</div>
+
+									<div class="input_item">
+										<p class="reqiured">상담가능시간<span class="blind">필수 선택</span></p>
+										<div class="select_box">
+											<label></label>
+											<select name="" id="cns_req_hr_div_cd" required>
+												<option value="" disabled selected>시간을 선택해주세요</option>
+                      <!-- <option value="01">09:00 ~ 10:00</option>
+                                              <option value="02">10:00 ~ 11:00</option>
+                                              <option value="03">11:00 ~ 12:00</option>
+                                              <option value="04">12:00 ~ 13:00</option>
+                                              <option value="05">13:00 ~ 14:00</option>
+                                              <option value="06">14:00 ~ 15:00</option>
+                                              <option value="07">15:00 ~ 16:00</option>
+                                              <option value="08">16:00 ~ 17:00</option>
+                                              <option value="09">17:00 ~ 18:00</option>
+                                              <option value="10">18:00 ~ 19:00</option> -->
+												<option value="13">[오전]이 좋아요</option>
+												<option value="14">[오후]가 좋아요</option>
+												<option value="16">시간은 상관없어요</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="input_item">
+										<p class="reqiured">연령대<span class="blind">필수 선택</span></p>
+										<div class="select_box">
+											<label></label>
+											<select name="" id="payment" required>
+												<option value="" disabled selected>연령대를 선택해주세요</option>
+												<option value="">연령대</option>
+												<option value="01">10대</option>
+												<option value="02">20대</option>
+												<option value="03">30대</option>
+												<option value="04">40대</option>
+												<option value="05">50대</option>
+												<option value="06">60대 이상</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="input_item w-100">
+										<p>직업</p>
+										<div class="select_box w-100">
+											<label></label>
+											<select name="" id="job_div_cd" required>
+												<option value="" disabled selected>직업을 선택해주세요</option>
+												<option value="01">직장인</option>
+												<option value="02">자영업</option>
+												<option value="03">개인사업자</option>
+												<option value="04">주부</option>
+												<option value="05">무직</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="input_item w-100">
+										<p>추천인 코드</p>
+										<label></label>
+										<input type="text" name="orgCd" id="orgCd" placeholder="예&#41; 320000001" autocomplete="off" maxlength="9" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+									</div>
+								</div>
+
+								<div class="privacy-box">
+									<div class="checkbox-agree">
+										<input type="checkbox" name="" id="c_agree" class="blind">
+										<label for="c_agree">약관에 전체 동의합니다</label>
+									</div>
+									<div class="checkbox-privacy">
+										<input type="checkbox" name="agree_chk" id="c_terms" class="blind" value="terms">
+										<label for="c_terms">개인정보 수집 및 이용안내 동의 (필수)</label>
+										<a href="javascript:void(0);" class="btn_privacy" onclick="openBottomSheet('sheet-agreement1');">자세히보기</a>
+									</div>
+									<div class="checkbox-counsel">
+										<input type="checkbox" name="agree_chk" id="c_counsel" class="blind" value="counsel">
+										<label for="c_counsel">채용상담서비스의 정보수신 동의 (선택)</label>
+										<a href="javascript:void(0);" class="btn_privacy" onclick="openBottomSheet('sheet-agreement2');">자세히보기</a>
+									</div>
 								</div>
 							</form>
 						</div>
@@ -97,8 +186,140 @@
 				</div>
 			</div>
 		</div>
-	</main>
-</div>
-
+    <!-- [D] 개인정보 수집 동의안내 자세히보기 -->
+		<div id="sheet-agreement1" class="bottom-sheet sheet-agree sheet-agreement1">
+			<div class="sheet-wrap">
+				<div class="sheet-header">
+					<h3><span class="text-red">[필수]</span> 메리츠파트너스 채용상담을 위한 개인신용정보 동의서</h3>
+					<p class="desc">* 본 동의서는 메리츠 파트너스가 개인정보처리자로서 수집 · 이용합니다.</p>
+					<button onclick="closeBottomSheet('sheet-agreement1')" class="close-button">
+						<span class="screen-only">닫기</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24" height="24" fill="none">
+							<path fill="#222" d="M21.172 24 5.586 8.414l2.828-2.828L24 21.17 39.586 5.586l2.828 2.828L26.83 24l15.585 15.586-2.828 2.828L24 26.828 8.414 42.414l-2.828-2.828L21.172 24Z"/>
+						</svg>
+					</button>
+				</div>
+				<div class="sheet-contents">
+					<div class="terms-desc">
+						<div class="desc-wrap">
+							<h4>1. 수집 · 이용에 관한 사항</h4>
+							<div class="notice">
+								<p>
+									<b>수집 · 이용목적</b>
+									개인정보 수집항목 : 회사명, 성함, 연락처, 이메일, 지역
+								</p>
+								<p>
+									<b>보유 및 이용기간</b>
+									보유기간은 동의일로부터 3개월이며 이후에는 지체없이 파기됩니다.
+								</p>
+								<p>
+									<b>거부 권리 및 불이익</b>
+									귀하는 아래 개인(신용)정보 수집, 이용에 관한 동의를 거부하실 수 있습니다.<br>
+									동의 거부 시 불이익은 없으나 메리츠파트너스의 채용상담 서비스는 제공되지 않습니다.
+								</p>
+							</div>
+						</div>
+						<div class="desc-wrap">
+							<h4>2. 수집 · 이용항목</h4>
+							<div class="use">
+								<b>개인(신용) 정보</b>
+								<p>- 일반 개인정보 : 성명, 주소, 생년월일, 성별, 전화번호, 상담 가능시간</p>
+							</div>
+						</div>
+						<div class="agreement">
+							<p class="text-red">위 개인신용정보 수집 · 이용에 동의하십니까?</p>
+							<div class="privacy-check">
+								<div class="check-agree">
+									<input type="radio" name="terms_chk" id="p-agree" class="blind" value="true">
+									<label for="p-agree">동의함</label>
+								</div>
+								<div class="check-disagree">
+									<input type="radio" name="terms_chk" id="p-disagree" class="blind" value="false" checked>
+									<label for="p-disagree">동의안함</label>
+								</div>
+							</div>
+						</div>
+						<a href="javascript:void(0)" class="confirm button dark" onclick="closeBottomSheet('sheet-agreement1')" disabled>확인</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- [D] 채용상담서비스 정보수신 동의안내 자세히보기 -->
+		<div id="sheet-agreement2" class="bottom-sheet sheet-agree sheet-agreement2">
+			<div class="sheet-wrap">
+				<div class="sheet-header">
+					<h3><span class="text-red">[선택]</span> 메리츠파트너스 채용상담을 위한 개인신용정보 동의서</h3>
+					<p class="desc">* 본 동의서는 메리츠 파트너스가 개인정보처리자로서 수집 · 이용합니다.</p>
+					<button onclick="closeBottomSheet('sheet-agreement2')" class="close-button">
+						<span class="screen-only">닫기</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24" height="24" fill="none">
+							<path fill="#222" d="M21.172 24 5.586 8.414l2.828-2.828L24 21.17 39.586 5.586l2.828 2.828L26.83 24l15.585 15.586-2.828 2.828L24 26.828 8.414 42.414l-2.828-2.828L21.172 24Z"/>
+						</svg>
+					</button>
+				</div>
+				<div class="sheet-contents">
+					<div class="terms-desc">
+						<div class="counsel-notice">
+							<p>
+								본 동의는 채용상담 서비스에 필수적이지 않으며, 동의를 거부하실 수 있습니다.<br class="web-view">
+								동의를 거부하시는 경우 별도의 불이익은 없습니다.<br class="web-view"> 동의하시더라도 당사 홈페이지 및 고객센터
+								를 통해 철회할 수 있습니다. <br class="mob-view">(대표번호 1566-7711)
+							</p>
+						</div>
+						<div class="desc-wrap">
+							<h4>1. 수집 · 이용에 관한 사항</h4>
+							<div class="notice top">
+								<p>
+									<b>수집 · 이용목적</b>
+									메리츠파트너스 설계사 채용을 위한 상담, 소개 연락 (전화/문자)
+								</p>
+								<p>
+									<b>보유 및 이용기간</b>
+									보유기간은 동의일로부터 3개월이며 이후에는 지체없이 파기됩니다.
+								</p>
+								<p>
+									<b>거부 권리 및 불이익</b>
+									귀하는 아래 개인(신용)정보 수집, 이용에 관한 동의를 거부하실 수 있습니다.<br>
+									동의 거부 시 불이익은 없으나 메리츠파트너스의 채용상담 서비스는 제공되지 않습니다.
+								</p>
+							</div>
+							<div class="counsel-notice">
+								<div class="counsel-desc">
+									<p>
+										※ 아래 등급은 사생활 침해 위험, 혜택, 명확성등을 종합적으로 고려하여
+										동의내용의 평가등급을 제공하는 제도입니다. (자세한 사항 QR코드 참고)
+									</p>
+									<img src="../images/common/counsel_qr.png" alt="">
+								</div>
+								<img src="../images/common/counsel_bar.png" class="web-view" alt="">
+								<img src="../images/common/counsel_bar.png" class="mob-view" alt="">
+							</div>
+						</div>
+						<div class="desc-wrap">
+							<h4>2. 수집 · 이용항목</h4>
+							<div class="use">
+								<b>일반 개인(신용) 정보</b>
+								<p>- 일반개인정보 : 직업</p>
+								<p>- 신용거래채정보 : 보험계약정보(납입보험료)</p>
+							</div>
+						</div>
+						<div class="agreement">
+							<p class="text-red">위 개인신용정보 수집 · 이용에 동의하십니까?</p>
+							<div class="privacy-check">
+								<div class="check-agree">
+									<input type="radio" name="counsel_chk" id="c-agree" class="blind" value="true">
+									<label for="c-agree"><span>안심</span>동의함</label>
+								</div>
+								<div class="check-disagree">
+									<input type="radio" name="counsel_chk" id="c-disagree" class="blind" value="false" checked>
+									<label for="c-disagree">동의안함</label>
+								</div>
+							</div>
+						</div>
+						<a href="javascript:void(0)" class="confirm button dark" onclick="closeBottomSheet('sheet-agreement2')" disabled>확인</a>
+					</div>
+				</div>
+			</div>
+		</div>
 </body>
 </html>
