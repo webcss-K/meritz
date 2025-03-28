@@ -93,30 +93,21 @@
 
 									<div class="input_item">
 										<p class="reqiured">상담가능시간</p>
-										<div class="select_box">
-											<label></label>
-											<select name="" id="cns_req_hr_div_cd" required>
-												<option value="" disabled selected>시간을 선택해주세요</option>
-                      <!-- <option value="01">09:00 ~ 10:00</option>
-                                              <option value="02">10:00 ~ 11:00</option>
-                                              <option value="03">11:00 ~ 12:00</option>
-                                              <option value="04">12:00 ~ 13:00</option>
-                                              <option value="05">13:00 ~ 14:00</option>
-                                              <option value="06">14:00 ~ 15:00</option>
-                                              <option value="07">15:00 ~ 16:00</option>
-                                              <option value="08">16:00 ~ 17:00</option>
-                                              <option value="09">17:00 ~ 18:00</option>
-                                              <option value="10">18:00 ~ 19:00</option> -->
-												<option value="13">[오전]이 좋아요</option>
-												<option value="14">[오후]가 좋아요</option>
-												<option value="16">시간은 상관없어요</option>
-											</select>
-										</div>
+										<div class="adviceTime_box">
+                      <div class="item">
+                        <input type="radio" name="adviceTime_chk" id="am_chk" class="blind" checked>
+                        <label for="am_chk">오전</label>
+                      </div>
+                      <div class="item">
+                        <input type="radio" name="adviceTime_chk" id="pm_chk" class="blind">
+                        <label for="pm_chk">오후</label>
+                      </div>
+                    </div>
 									</div>
 
 									<div class="input_item">
 										<p class="reqiured">연령대</p>
-										<div class="select_box">
+										<div class="select_box w-35p">
 											<label></label>
 											<select name="" id="payment" required>
 												<option value="" disabled selected>연령대를 선택해주세요</option>
@@ -133,7 +124,7 @@
 
 									<div class="input_item w-100">
 										<p>직업(선택)</p>
-										<div class="select_box w-100">
+										<div class="select_box w-35p">
 											<label></label>
 											<select name="" id="job_div_cd" required>
 												<option value="" disabled selected>직업을 선택해주세요</option>

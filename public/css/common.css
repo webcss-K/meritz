@@ -260,7 +260,7 @@ body {
 .bottom-sheet .sheet-wrap .content-title {
   padding-bottom: 15px;
   text-align: left;
-  border-bottom: 3px solid #ff8000;
+  background: url(../images/common/popup_titleBar.jpg) no-repeat left bottom;
 }
 .bottom-sheet .sheet-wrap .content-title p {
   font-size: 22px;
@@ -388,6 +388,39 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+#inquiry .form_box .select_box.w-35p {
+  flex-grow: 0;
+  flex-basis: 35%;
+}
+#inquiry .form_box .adviceTime_box input[type=radio] + label {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  color: #777;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+#inquiry .form_box .adviceTime_box input[type=radio] + label:before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin-right: 15px;
+  background: url(../images/common/radioCheck.jpg) no-repeat center/100% auto;
+}
+#inquiry .form_box .adviceTime_box input[type=radio]:checked + label {
+  color: #222;
+  font-weight: 700;
+}
+#inquiry .form_box .adviceTime_box input[type=radio]:checked + label:before {
+  background-image: url(../images/common/radioChecked.jpg);
 }
 #inquiry .form_box .input-wrap {
   flex-grow: 1;
