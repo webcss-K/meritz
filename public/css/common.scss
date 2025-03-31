@@ -165,23 +165,40 @@ body {
     overflow: hidden auto;
 
     .content-title{
-      padding-bottom: 15px;
+      padding: 0 0 15px 20px;
       text-align: left;
       background: url(../images/common/popup_titleBar.jpg) no-repeat left bottom;
 
+      @media(max-width:768px){
+        padding: 0 0 10px 10px;
+      }
+
       p{
         font-size: 22px;
+
+        @media(max-width:768px){
+          font-size: 15px;
+        }
       }
 
       h4{
         font-size: 38px;
         color: #fc6a09;
+
+        @media(max-width:768px){
+          font-size: 25px;
+          font-weight: 500;
+        }
       }
     }
 
     .sheet-contents {
       flex: 1;
       padding: 2rem 2rem;
+
+      @media(max-width:768px){
+        padding: 1rem;
+      }
     }
 
     .close-button {
@@ -191,6 +208,13 @@ body {
       width: 36px;
       height: 36px;
       z-index: 2;
+
+      @media(max-width:768px){
+        right: 1rem;
+        top: 0.5rem;
+        width: 20px;
+        height: 20px;
+      }
     }
 
     &.animate-up {
@@ -218,12 +242,21 @@ body {
 #inquiry {
   margin-top: 25px;
 
+  @media(max-width:768px){
+    margin-top: 10px;
+  }
+  
   .impColor{
     padding-bottom: 4px;
     font-size: 15px;
     color: #ff6600;
     text-align:right;
     font-weight: 400;
+
+    @media(max-width:768px){
+      padding-bottom: 0;
+      font-size: 13px;
+    }
   }
 
   .form_box {
@@ -231,8 +264,23 @@ body {
     position: relative;
     width: 100%;
     padding-bottom: 60px;
-    gap: 20px;
     flex-direction: column;
+
+    @media(max-width:768px){
+      padding-bottom: 30px;
+    }
+
+    & > div{
+      margin-bottom: 20px;
+
+      @media(max-width:768px){
+        margin-bottom: 10px;
+      }
+
+      &.input_item_last{
+        margin-bottom: 5px;
+      }
+    }
 
     .input_item {
       display: flex;
@@ -254,6 +302,47 @@ body {
           font-size: 20px;
           font-weight: bold;
         }
+
+        @media(max-width:768px){
+          width: auto;
+          padding-left: 0;
+          padding-bottom: 3px;
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+
+      .tel_box{
+        display: flex;
+        flex-shrink: initial;
+
+        div{
+          display: flex;
+          width: 20%;
+          padding-left: 5%;
+          grid-column-gap: 0;
+          position: relative;
+
+          &:first-child{
+            padding-left: 0;
+
+            &::before{
+              content: "";
+            }
+          }
+
+          &::before{
+            content: "-";
+            position: absolute;
+            left: 5%;
+            top: 25%;
+          }
+        }
+      }
+
+      @media(max-width:768px){
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
 
@@ -275,9 +364,6 @@ body {
         display: block;
         width: 0;
         height: 0;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 7px solid #D9D9D9;
       }
 
       select {
@@ -295,6 +381,7 @@ body {
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
+        background: url(../images/common/select_arr.jpg) no-repeat 95% 50%;
 
         &:focus {
           option {
@@ -316,15 +403,26 @@ body {
         align-items: center;
         justify-content: space-between;
         gap: 12px;
+
+        @media(max-width:768px){
+          width: 100%;
+        }
       }
 
       &.w-35p{
         flex-grow: 0;
         flex-basis: 35%;
       }
+
+      @media(max-width:768px){
+        width: 100%;
+      }
     }
 
     .adviceTime_box{
+      display: flex;
+      gap: 70px;
+
       input[type="radio"] + label {
         display: flex;
         width: fit-content;
@@ -345,20 +443,32 @@ body {
           height: 36px;
           margin-right: 15px;
           background: url(../images/common/radioCheck.jpg) no-repeat center / 100% auto;
+
+          @media(max-width:768px){
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+          }
         }
       }
       input[type="radio"]:checked + label {
-        color: #222;
-        font-weight: 700;
   
         &:before {
           background-image: url(../images/common/radioChecked.jpg);
         }
       }
+
+      @media(max-width:768px){
+        gap: 30%;
+      }
     }
 
     .input-wrap{
       flex-grow: 1;
+
+      @media(max-width:768px){
+        width: 100%;
+      }
     }
 
     input[type="text"] {
@@ -404,6 +514,35 @@ body {
       letter-spacing: -0.03em;
     }
   }
+
+  .career_text{
+    padding-left: 180px;
+    text-align: left;
+    font-size: 16px;
+    color: #888;
+    font-weight: 300;
+
+    @media(max-width:768px){
+      padding-left: 0;
+      font-size: 14px;
+
+      br{display: none;}
+    }
+  }
+
+  .area_button{
+    .button{
+      font-size: 29px;
+      font-weight: 500;
+      border-radius: 50px;
+      background-color: #ff8100;
+
+      @media(max-width:768px){
+        padding: 14px;
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 /* checkbox */
@@ -413,13 +552,28 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
-  padding-top: 28px;
-  border-top: 1px solid #eee;
+  margin: 0 auto 60px;
+  border-top: 2px solid #d8d8d8;
+  border-bottom: 2px solid #d8d8d8;
+
+  @media(max-width:768px){
+    margin-bottom: 30px;
+  }
+
+  & > div{
+    padding: 18px 20px;
+
+    @media(max-width:768px){
+      padding: 15px 22px 15px 10px;
+    }
+  }
 
   .checkbox-agree {
-    padding: 14px 0;
-    border-bottom: 1px solid #F0F1F6;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .checkbox-privacy{
+    border-bottom: 1px solid #ebebeb;
   }
 
   div[class^="checkbox-"] {
@@ -427,15 +581,14 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 14px auto 0;
 
     input[type="checkbox"] + label {
       display: flex;
       width: fit-content;
       align-items: center;
       color: #777;
-      font-size: 15px;
-      line-height: 18px;
+      font-size: 18px;
+      line-height: 1.5;
       letter-spacing: -0.03em;
       cursor: pointer;
       user-select: none;
@@ -445,18 +598,35 @@ body {
       &:before {
         content: '';
         display: inline-block;
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
+        width: 30px;
+        height: 30px;
+        margin-right: 14px;
         background: url(../images/common/check.jpg) no-repeat center / 100% auto;
+
+        @media(max-width:768px){
+          width: 25px;
+          height: 25px;
+          margin-right: 10px;
+        }
+      }
+
+      @media(max-width:768px){
+        text-align: left;
+        font-size: 15px;
       }
     }
     input[type="checkbox"]:checked + label {
-      color: #222;
-      font-weight: 700;
 
       &:before {
         background-image: url(../images/common/checked.jpg);
+      }
+    }
+
+    &.checkbox-agree {
+
+      input[type="checkbox"] + label{
+        font-weight: 500;
+        color: #1b1b1b;
       }
     }
   }
@@ -475,9 +645,25 @@ body {
     -moz-user-select: none;
   }
 
-  input[type="checkbox"]:checked + label {
-    color: #222;
-    font-weight: 700;
+  .privacyText{
+    display: none;
+    height: 280px;
+    overflow: auto;
+    padding: 18px 20px;
+    text-align: left;
+    color: #666;
+    line-height: 1.5;
+    border-bottom: 1px solid #ebebeb;
+    background: #fafafa;
+    
+    &.active{
+      display: block;
+    }
+
+    @media(max-width:768px){
+      padding: 10px 13px;
+      font-size: 15px;
+    }
   }
 
   .btn_privacy {
