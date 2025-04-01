@@ -183,3 +183,69 @@ var areaSelectMaker = function (a2, a3) {
         $(a3).empty().append("<option value=''>시/군/구</option>");
     }
 }
+
+
+//체크박스 추가
+$(document).on("click", "#c_agree", function() {
+    if($("#c_agree").is(":checked")){
+        $("input[name=agree_chk]").prop("checked", true);
+        $("input:radio[name='terms_chk']:radio[value='true']").prop('checked', true);
+        $("input:radio[name='counsel_chk']:radio[value='true']").prop('checked', true);
+    }else{
+        $("input[name=agree_chk]").prop("checked", false);
+        $("input:radio[name='terms_chk']:radio[value='false']").prop('checked', true);
+        $("input:radio[name='counsel_chk']:radio[value='false']").prop('checked', true);
+    }
+});
+
+$(document).on("click", "input[name=agree_chk]", function() {
+    const total = $("input[name=agree_chk]").length;
+    const total_checked = $("input[name=agree_chk]:checked").length;
+    const checked = $(this).is(':checked');
+    const val = $(this).val()
+    if(val === 'terms'){
+        if (checked){
+            $("input:radio[name='terms_chk']:radio[value='true']").prop('checked', true);
+            $('#sheet-agreement1 a').removeAttr("disabled")
+        }else{
+            $("input:radio[name='terms_chk']:radio[value='false']").prop('checked', true);
+            $('#sheet-agreement1 a').attr('disabled', 'disabled')
+        }
+    }else if(val === 'counsel'){
+        if (checked){
+            $("input:radio[name='counsel_chk']:radio[value='true']").prop('checked', true);
+            $('#sheet-agreement2 a').removeAttr("disabled")
+        }else{
+            $("input:radio[name='counsel_chk']:radio[value='false']").prop('checked', true);
+            $('#sheet-agreement2 a').attr('disabled', 'disabled')
+        }
+    }
+
+    if(total != total_checked) $("#c_agree").prop("checked", false);
+    else $("#c_agree").prop("checked", true);
+});
+
+
+
+//약관박스보기 추가
+$(document).on("click", ".btn_privacy", function() {
+    const viewClass = "."+$(this).parent().attr("class")+"_text";
+    viewBoxReset($(this).parent().attr("class")+"_text")
+    if($(viewClass).hasClass("active")){
+        TweenMax.to($(this), 0.5,{ rotation:0, ease: Cubic.easeOut});
+        $(viewClass).removeClass("active")
+    }else{
+        TweenMax.to($(this), 0.3,{ rotation:180, ease: Cubic.easeOut});
+        $(viewClass).addClass("active")
+    } 
+});
+
+const viewBoxReset = ($class) => {
+    console.log($(".privacyText.active").attr("class"),$class)
+    if($(".privacyText.active").hasClass($class)){
+        return
+    }else{
+        $(".privacyText.active").removeClass("active")
+    }
+    TweenMax.to($(".btn_privacy"), 0.3,{ rotation:0, ease: Cubic.easeOut});
+}
