@@ -36,11 +36,17 @@ body {
 }
 
 /* hamburger */
+.menu-toggle{
+  display: none;
+}
 .hamburger-icon {
+  display: none;
   position: relative;
   width: 16px;
   height: 16px;
   cursor: pointer;
+  border-radius: 50%;
+  background-color: #646058;
 
   span {
     position: absolute;
@@ -129,18 +135,26 @@ body {
 .btn-ask {
   position: fixed;
   display: block;
-  transition: all 1s;
-  left: 0;
+  margin-left: -300px;
+  left: 50%;
   bottom: 10px;
-  width: 100%;
+  width: 600px;
   text-align: center;
   z-index: 1;
 
+  @media(max-width:768px){
+    width: 100%;
+    left: 0;
+    margin: 0;
+  }
+
   .button {
     display: block;
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
     max-width: 720px;
+    border-radius: 50px;
+    border: 2px solid #ff6000;
     background: #FF6600;
   }
 }
@@ -772,8 +786,8 @@ body {
   /* ====== header ====== */
 
   .hamburger-icon {
-      width: 32px;
-      height: 32px;
+      width: 50px;
+      height: 50px;
   }
 
   .hamburger-icon span::before {

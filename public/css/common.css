@@ -58,12 +58,15 @@
 :root {
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
   cursor: default;
   line-height: 1.5;
   overflow-wrap: break-word;
   word-break: break-word;
-  tab-size: 4;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
 }
 
 html, body {
@@ -133,11 +136,18 @@ body {
 }
 
 /* hamburger */
+.menu-toggle {
+  display: none;
+}
+
 .hamburger-icon {
+  display: none;
   position: relative;
   width: 16px;
   height: 16px;
   cursor: pointer;
+  border-radius: 50%;
+  background-color: #646058;
 }
 .hamburger-icon span {
   position: absolute;
@@ -220,18 +230,27 @@ body {
 .btn-ask {
   position: fixed;
   display: block;
-  transition: all 1s;
-  left: 0;
+  margin-left: -300px;
+  left: 50%;
   bottom: 10px;
-  width: 100%;
+  width: 600px;
   text-align: center;
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .btn-ask {
+    width: 100%;
+    left: 0;
+    margin: 0;
+  }
+}
 .btn-ask .button {
   display: block;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   max-width: 720px;
+  border-radius: 50px;
+  border: 2px solid #ff6000;
   background: #FF6600;
 }
 
@@ -497,6 +516,7 @@ body {
 }
 #inquiry .form_box .adviceTime_box input[type=radio] + label {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   align-items: center;
   color: #777;
@@ -645,6 +665,7 @@ body {
 }
 .privacy-box div[class^=checkbox-] input[type=checkbox] + label {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   align-items: center;
   color: #777;
@@ -686,6 +707,7 @@ body {
 }
 .privacy-box input[type=checkbox] + label {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   align-items: center;
   color: #777;
@@ -739,15 +761,12 @@ body {
 /* animation */
 @keyframes pulse {
   0% {
-    -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
   }
   50% {
-    -webkit-transform: translate(0, 10px);
     transform: translate(0, 10px);
   }
   100% {
-    -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
   }
 }
@@ -810,8 +829,8 @@ body {
   }
   /* ====== header ====== */
   .hamburger-icon {
-    width: 32px;
-    height: 32px;
+    width: 50px;
+    height: 50px;
   }
   .hamburger-icon span::before {
     top: -10px;
@@ -824,4 +843,4 @@ body {
     max-width: 720px;
     margin: 0 auto;
   }
-}
+}/*# sourceMappingURL=common.css.map */
