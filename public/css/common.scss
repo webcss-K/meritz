@@ -38,17 +38,22 @@ body {
 /* hamburger */
 .menu-toggle{
   display: none;
+  position: absolute;
+  right: 50%;
+  top: 1%;
+  margin-right: -30%;
 }
+
 .hamburger-icon {
-  display: none;
   position: relative;
   width: 16px;
   height: 16px;
   cursor: pointer;
   border-radius: 50%;
-  background-color: #646058;
+  // background-color: #646058;
 
   span {
+    display: none !important;
     position: absolute;
     display: block;
     width: 100%;
@@ -135,27 +140,28 @@ body {
 .btn-ask {
   position: fixed;
   display: block;
-  margin-left: -300px;
-  left: 50%;
+  left: 0;
   bottom: 10px;
-  width: 600px;
+  width: 100%;
   text-align: center;
   z-index: 1;
 
-  @media(max-width:768px){
-    width: 100%;
-    left: 0;
-    margin: 0;
-  }
-
   .button {
     display: block;
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
-    max-width: 720px;
-    border-radius: 50px;
-    border: 2px solid #ff6000;
-    background: #FF6600;
+    // max-width: 720px;
+    // border-radius: 50px;
+    // border: 2px solid #ff6000;
+    // background: #FF6600;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -15%;
+    text-indent: -10000rem;
+    background: none;
   }
 }
 
