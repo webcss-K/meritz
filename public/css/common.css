@@ -384,8 +384,11 @@ body {
     margin-bottom: 10px;
   }
 }
-#inquiry .form_box > div.input_item_last {
+#inquiry .form_box > div.input_item_06 {
   margin-bottom: 5px;
+}
+#inquiry .form_box > div.input_item_last {
+  margin-bottom: 0px;
 }
 #inquiry .form_box .input_item {
   display: flex;
@@ -598,6 +601,7 @@ body {
   letter-spacing: -0.03em;
 }
 #inquiry .career_text {
+  margin-bottom: 20px;
   padding-left: 180px;
   text-align: left;
   font-size: 16px;

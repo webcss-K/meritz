@@ -297,8 +297,13 @@ body {
         margin-bottom: 10px;
       }
 
-      &.input_item_last{
+      &.input_item_06{
         margin-bottom: 5px;
+      }
+
+      &.input_item_last{
+        // margin-bottom: 5px;
+        margin-bottom: 0px;
       }
     }
 
@@ -536,6 +541,7 @@ body {
   }
 
   .career_text{
+    margin-bottom: 20px;
     padding-left: 180px;
     text-align: left;
     font-size: 16px;
