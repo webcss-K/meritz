@@ -116,6 +116,13 @@ body {
   padding: 60px 30px;
   background-color: #fff;
   z-index: 5;
+
+  li{
+    padding-bottom: 5%;
+    a{
+      font-size: 30px;
+    }
+  }
 }
 
 .open + .nav {

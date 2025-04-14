@@ -21,25 +21,32 @@
 </head>
 
 <body>
+  <div class="header">
+    <img src="../images/temp/header.png" alt="">
+		<img src="../images/temp/mb/header.png" class="mb_img" alt="">
+    <a href="#" class="logo"></a>
+  </div>
   <button class="menu-toggle" aria-label="메뉴">
     <div class="hamburger-icon">
       <span></span>
+      <img src="../images/temp/btn_close.jpg" class="btn_close" alt="">
     </div>
   </button>
 
   <nav class="nav">
     <ul>
-      <li><a href="#">link 1</a></li>
-      <li><a href="#">link 2</a></li>
-      <li><a href="#">link 3</a></li>
-      <li><a href="#">link 4</a></li>
+      <li><a href="#">LIFE MD 소개</a></li>
+      <li><a href="#">LIFE MD 수입</a></li>
+      <li><a href="#">지원방법</a></li>
+      <li><a href="#">활동기</a></li>
+      <li><a href="#">FAQ</a></li>
     </ul>
   </nav>
 
   		<div class="wrap">
 			<div class="contents contents01">
-				<img src="../images/temp/1_02.jpg" alt="">
-				<img src="../images/temp/mb/1_02.jpg" class="mb_img" alt="">
+				<img src="../images/temp/1.jpg" alt="">
+				<img src="../images/temp/mb/1.jpg" class="mb_img" alt="">
 			</div>
 			<div class="contents contents02">
 				<img src="../images/temp/2.jpg" alt="">
@@ -61,6 +68,8 @@
 			<div class="contents contents06">
 				<img src="../images/temp/6.jpg" alt="">
 				<img src="../images/temp/mb/6.jpg" class="mb_img" alt="">
+        <a href="https://www.youtube.com/watch?v=T4l3YcKD11k" class="left_link" target="_blank"></a>
+        <a href="https://www.youtube.com/watch?v=smuGjH9MLSU" class="right_link" target="_blank"></a>
 			</div>
 			<div class="contents contents07">
 				<img src="../images/temp/7.jpg" alt="">
@@ -271,6 +280,7 @@
 						<div class="area_button">
 							<button type="button" class="button btn_submit btn-click" data-title="상담신청 확인" onclick="save()" id="sendButton" disabled >신청 완료</button>
 							<input type="hidden" id="is_saved" value="N">
+              <button onclick="openBottomSheet('sheet-end')" class="button btn-click">신청완료</button>
 						</div>
 					</div>
 				</div>
@@ -282,5 +292,15 @@
         </button>
 			</div>
 		</div>
+
+    <div id="sheet-end" class="bottom-sheet sheet-end">
+      <div class="imgInner">
+        <div class="imgBox">
+          <img src="../images/temp/popup_askEn.png" alt="">
+          <button onclick="closeAll(); init_value();" class="btn_close"></button>
+          <button onclick="closeAll(); init_value();" class="btn_end"></button>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

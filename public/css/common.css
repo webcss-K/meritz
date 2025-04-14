@@ -210,6 +210,12 @@ body {
   background-color: #fff;
   z-index: 5;
 }
+.nav li {
+  padding-bottom: 5%;
+}
+.nav li a {
+  font-size: 30px;
+}
 
 .open + .nav {
   display: flex;
