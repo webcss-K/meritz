@@ -34,7 +34,7 @@ $(document).ready(function(){
 
     // 햄버거 메뉴 토글 이벤트 리스너
     $('.menu-toggle').click(function() {
-        $(this).toggleClass('open');
+        $('.menu-toggle').toggleClass('open');
         $('#menu').toggleClass('open');
     });
 

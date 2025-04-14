@@ -28,11 +28,20 @@
     width: 10%;
     height: 80%;
   }
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    margin-left: 27%;
+    width: 4%;
+    height: 80%;
+  }
 }
 
 .menu-toggle{
   display: block;
-  position: absolute;
+  position: fixed;
   right: 50%;
   top: 1%;
   margin-right: -31%;
