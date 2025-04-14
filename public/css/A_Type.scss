@@ -61,6 +61,8 @@
 
   .btn_close{
     display: none;
+    padding-top:20%;
+    margin-left: 30%;
     width: 70%;
     max-width: 36px;
   }
@@ -107,7 +109,17 @@
         margin-left: -20%;
       }
     }
-
+    &.contents02{
+      position: relative;
+      #move_rect{
+        position: absolute;
+        top:39%;
+        background: #000;
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+      }
+    }
     &.contents06{
       a{
         display: block;

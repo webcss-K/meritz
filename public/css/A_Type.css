@@ -56,6 +56,8 @@
 }
 .menu-toggle .btn_close {
   display: none;
+  padding-top: 20%;
+  margin-left: 30%;
   width: 70%;
   max-width: 36px;
 }
@@ -93,6 +95,17 @@
     height: 8%;
     margin-left: -20%;
   }
+}
+.wrap .contents.contents02 {
+  position: relative;
+}
+.wrap .contents.contents02 #move_rect {
+  position: absolute;
+  top: 39%;
+  background: #000;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
 }
 .wrap .contents.contents06 a {
   display: block;
@@ -173,4 +186,4 @@
   left: 7%;
   bottom: 24%;
   z-index: 9999;
-}/*# sourceMappingURL=A_Type.css.map */
+}
