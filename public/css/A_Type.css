@@ -116,10 +116,10 @@
   left: 50%;
 }
 .wrap .contents.contents06 a.left_link {
-  margin-left: -30%;
+  margin-left: -30.5%;
 }
 .wrap .contents.contents06 a.right_link {
-  margin-left: 0%;
+  margin-left: 0.5%;
 }
 @media (max-width: 768px) {
   .wrap .contents.contents06 a {
