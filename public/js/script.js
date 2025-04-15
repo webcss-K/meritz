@@ -52,8 +52,6 @@ $(document).ready(function(){
         $('html, body').animate({
             scrollTop: $(target).offset().top
         }, 300);
-        $('.header').addClass('light-bg');
-
         $('.menu-toggle').removeClass('open');
         $('.header .nav').removeClass('open');
     });
