@@ -57,6 +57,18 @@ $(document).ready(function(){
         $('.menu-toggle').removeClass('open');
         $('.header .nav').removeClass('open');
     });
+
+    // scroll event
+    $(window).scroll(function() {
+        var scrollPosition = $(window).scrollTop();
+        var visualHeight = $('.contents01').outerHeight();
+
+        if (scrollPosition > visualHeight) {
+            $('.header').addClass('light-bg');
+        } else {
+            $('.header').removeClass('light-bg');
+        }
+    });
 });
 
 // 요소가 화면에 보이는지 여부를 확인하는 함수

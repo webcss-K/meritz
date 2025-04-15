@@ -236,7 +236,6 @@ body {
 .btn-ask {
   position: fixed;
   display: block;
-  left: 0;
   bottom: 10px;
   width: 100%;
   text-align: center;
