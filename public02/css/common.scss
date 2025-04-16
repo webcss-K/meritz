@@ -825,3 +825,114 @@ body {
       margin: 0 auto;
   }
 }
+
+
+
+
+
+
+.wrap{
+  max-width: 1920px;
+  min-width: 1240px;
+  margin: 0 auto;
+
+  #container{
+    .contents{
+      position: relative;
+      z-index: 1;
+
+      &.contents01{
+        padding-top: 100px;
+
+        .textTitle{
+          font-size: 50px;
+          text-align:center;
+          line-height: 1.3;
+
+          b{
+            padding: 0 10px;
+            color: #fff;
+            font-weight: 700;
+            background-color: #ff7e00;
+          }
+
+          span{
+            font-size: 53px;
+          }
+
+          strong{
+            font-size: 58px;
+          }
+        }
+
+        .benefitList{
+          padding-top: 75px;
+          position: relative;
+          z-index: 1;
+
+          ul{
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+
+            li{
+              display: flex;
+              width: 390px;
+              height: 380px;
+              text-align: center;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+              border-radius: 40px;
+              background-color: #fff5db;
+
+              p{
+                padding-top: 50px;
+                color: #1a1a1a;
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 1.2;
+                
+                b{
+                  color: #ff6000;
+                }
+              }
+
+              img{
+                vertical-align: top;
+              }
+            }
+          }
+        }
+
+        #move_rect{
+          position: absolute;
+          z-index: 1;
+          left: 50%;
+          top: 780px;
+        }
+
+        .contents01_Story{
+          position: relative;
+          z-index: 1;
+
+          .StoryTitle{
+            text-align: center;
+          }
+        }
+
+        &::after{
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 0;
+          height: 70%;
+          background-color: #ffab3a;
+        }
+      }
+    }
+  }
+}

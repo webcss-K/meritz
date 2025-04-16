@@ -852,4 +852,91 @@ body {
     max-width: 720px;
     margin: 0 auto;
   }
+}
+.wrap {
+  max-width: 1920px;
+  min-width: 1240px;
+  margin: 0 auto;
+}
+.wrap #container .contents {
+  position: relative;
+  z-index: 1;
+}
+.wrap #container .contents.contents01 {
+  padding-top: 100px;
+}
+.wrap #container .contents.contents01 .textTitle {
+  font-size: 50px;
+  text-align: center;
+  line-height: 1.3;
+}
+.wrap #container .contents.contents01 .textTitle b {
+  padding: 0 10px;
+  color: #fff;
+  font-weight: 700;
+  background-color: #ff7e00;
+}
+.wrap #container .contents.contents01 .textTitle span {
+  font-size: 53px;
+}
+.wrap #container .contents.contents01 .textTitle strong {
+  font-size: 58px;
+}
+.wrap #container .contents.contents01 .benefitList {
+  padding-top: 75px;
+  position: relative;
+  z-index: 1;
+}
+.wrap #container .contents.contents01 .benefitList ul {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.wrap #container .contents.contents01 .benefitList ul li {
+  display: flex;
+  width: 390px;
+  height: 380px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 40px;
+  background-color: #fff5db;
+}
+.wrap #container .contents.contents01 .benefitList ul li p {
+  padding-top: 50px;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.2;
+}
+.wrap #container .contents.contents01 .benefitList ul li p b {
+  color: #ff6000;
+}
+.wrap #container .contents.contents01 .benefitList ul li img {
+  vertical-align: top;
+}
+.wrap #container .contents.contents01 #move_rect {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 780px;
+}
+.wrap #container .contents.contents01 .contents01_Story {
+  position: relative;
+  z-index: 1;
+}
+.wrap #container .contents.contents01 .contents01_Story .StoryTitle {
+  text-align: center;
+}
+.wrap #container .contents.contents01::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  height: 70%;
+  background-color: #ffab3a;
 }/*# sourceMappingURL=common.css.map */
