@@ -160,8 +160,14 @@
 }
 
 .btn-ask .inner .button {
-  width: 50%;
-  margin-left: -25%;
+  width: 32%;
+  margin-left: -16%;
+}
+@media (max-width: 768px) {
+  .btn-ask .inner .button {
+    width: 50%;
+    margin-left: -25%;
+  }
 }
 .btn-ask .inner img.mb_img {
   display: none;
@@ -215,4 +221,4 @@
   left: 7%;
   bottom: 24%;
   z-index: 9999;
-}
+}/*# sourceMappingURL=A_Type.css.map */

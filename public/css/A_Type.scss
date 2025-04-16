@@ -171,8 +171,13 @@
 .btn-ask{
   .inner{
     .button{
-      width: 50%;
-      margin-left: -25%;
+      width: 32%;
+      margin-left: -16%;
+
+      @media(max-width:768px){
+        width: 50%;
+        margin-left: -25%;
+      }
     }
 
     img{
