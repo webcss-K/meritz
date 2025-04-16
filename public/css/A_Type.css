@@ -159,9 +159,13 @@
   padding-bottom: 30px;
 }
 
+.btn-ask {
+  max-width: 1920px;
+}
 .btn-ask .inner .button {
-  width: 32%;
-  margin-left: -16%;
+  width: 31.4%;
+  margin-left: -15.7%;
+  height: 91%;
 }
 @media (max-width: 768px) {
   .btn-ask .inner .button {
@@ -221,4 +225,4 @@
   left: 7%;
   bottom: 24%;
   z-index: 9999;
-}/*# sourceMappingURL=A_Type.css.map */
+}

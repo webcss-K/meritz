@@ -117,7 +117,7 @@
       bottom: 18.5%;
       margin-left: -11%;
       text-indent: -10000rem;
-      background: none;
+      background:none;
 
       @media(max-width:768px){
         width: 34%;
@@ -169,10 +169,12 @@
 }
 
 .btn-ask{
+  max-width: 1920px;
   .inner{
     .button{
-      width: 32%;
-      margin-left: -16%;
+      width: 31.4%;
+      margin-left: -15.7%;
+      height: 91%;
 
       @media(max-width:768px){
         width: 50%;
