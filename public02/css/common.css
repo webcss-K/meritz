@@ -1077,4 +1077,30 @@ body {
 }
 .wrap #container .contents.contents02 .textTitle strong {
   font-size: 58px;
+}
+.wrap #container .contents.contents02 .qnaList {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.wrap #container .contents.contents02 .qnaList .img {
+  display: flex;
+  width: 100%;
+  padding: 50px 0 40px;
+  justify-content: center;
+}
+.wrap #container .contents.contents02 .qnaList ul {
+  display: flex;
+  width: 720px;
+  justify-content: center;
+  flex-direction: column;
+  border-top: 2px solid #efeadd;
+}
+.wrap #container .contents.contents02 .qnaList ul li {
+  padding: 17px 0 17px 72px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #555;
+  border-bottom: 2px solid #efeadd;
+  background: url(../images/common/contents/contents02_list_checkIcon.png) no-repeat 30px center;
 }/*# sourceMappingURL=common.css.map */

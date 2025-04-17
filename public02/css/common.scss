@@ -1089,6 +1089,35 @@ body {
             font-size: 58px;
           }
         }
+
+        .qnaList{
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          .img{
+            display: flex;
+            width: 100%;
+            padding: 50px 0 40px;
+            justify-content: center;
+          }
+          ul{
+            display: flex;
+            width: 720px;
+            justify-content: center;
+            flex-direction: column;
+            border-top: 2px solid #efeadd;
+
+            li{
+              padding: 17px 0 17px 72px;
+              font-size: 24px;
+              font-weight: 500;
+              color: #555;
+              border-bottom: 2px solid #efeadd;
+              background: url(../images/common/contents/contents02_list_checkIcon.png) no-repeat 30px center;
+            }
+          }
+        }
       }
     }
   }
